@@ -1,29 +1,24 @@
-import axios from axios;
+import { processRequestAndResponse } from './CoreService'
+const baseUrl = '/api';
 
-const url = 'http://localhost:5000/api/posts'; 
+export async function getPosts() {
+	let url = `${baseUrl}/posts`;
+	let data = await processRequestAndResponse(url, 'get');
+	console.log('data: ', data);
+	return data;
+}
 
-class PostService {
-
-	//Get Post
-	static getPosts() {
-		return Promise(async (resolve, reject) => {
-			try {
-				const res = await axios.get(url);
-				const data = res.data;
-				resolve(
-					data.map(post => ({
-						...post,
-						createdAt: new Date(post.createdAt)
-					}))
-				);
-			} catch (err) {
-				reject(err);
-			}
-		})
+export async function insertPost(text) {
+	let url = `${baseUrl}/posts`;
+	let payload = {
+		text
 	}
+	let data = await processRequestAndResponse(url, 'post', payload);
+	return data;
+}
 
-	// create post
-
-	// delete post
-
+export async function deletePost(id) {
+	let url = `${baseUrl}/posts/${ id }`;
+	let data = await processRequestAndResponse(url, 'delete', id);
+	return data;
 }
