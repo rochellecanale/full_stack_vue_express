@@ -1,9 +1,11 @@
 <template>
    <footer>
-       <p>{{ copyright }} {{ title }}</p>
+       <p>{{ copyright }} {{ pageTitle }}</p>
    </footer>
 </template>
 <script>
+
+import { bus } from '../main'
 
 export default {
     props: {
@@ -13,10 +15,16 @@ export default {
     },
     data() {
         return {
+            pageTitle: this.title,
             copyright: "Copyright 2022"
         }
     },
     methods: {
+    },
+    created() {
+        bus.$on('titleChanged', (data) => {
+            this.pageTitle = data
+        })
     }
 }
 </script>

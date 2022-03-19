@@ -1,9 +1,11 @@
 <template>
     <header>
-        <h1 @click="changeTitle"> {{ title }} </h1>
+        <h1 @click="changeTitle"> {{ pageTitle }} </h1>
     </header>
 </template>
 <script>
+
+import { bus } from '../main'
 
 export default {
     props: {
@@ -12,11 +14,15 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            pageTitle: this.title
+        }
     },
     methods: {
         changeTitle() {
-            this.$emit('changeTitle', 'Vue Wizards')
+            //this.$emit('changeTitle', 'Vue Wizards')
+            this.pageTitle = 'Vue Wizards'
+            bus.$emit('titleChanged', 'Vue Wizards')
         }
     }
 }
