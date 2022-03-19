@@ -1,18 +1,24 @@
 <template>
     <header>
-        <h1> {{ title }} </h1>
+        <h1 @click="changeTitle"> {{ title }} </h1>
     </header>
 </template>
 <script>
 
 export default {
-  data() {
-    return {
-      title: "Vue Ninjas"
+    props: {
+        title: {
+            type: String
+        }
+    },
+    data() {
+        return {}
+    },
+    methods: {
+        changeTitle() {
+            this.$emit('changeTitle', 'Vue Wizards')
+        }
     }
-  },
-  methods: {
-  }
 }
 </script>
 <style scoped>
