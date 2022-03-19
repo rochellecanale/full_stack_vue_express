@@ -5,6 +5,7 @@
     <!--
     <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
     -->
+    <!--
     <form-helper>
       <h1 slot="form-header">{{ formTitle }}</h1>
       <div slot="form-content">
@@ -16,6 +17,13 @@
         <button type="submit">Login</button>
       </div>
     </form-helper>
+    -->
+    <keep-alive>
+     <component v-bind:is="component"></component>
+    </keep-alive>
+    <button @click="component = 'form-one'">Show form one</button>
+    <button @click="component = 'form-two'">Show form twp</button>
+
     <app-footer v-bind:title="title"></app-footer>
 
   </div>
@@ -24,18 +32,23 @@
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Ninjas from './components/Ninjas'
-import FormHelper from './components/FormHelper.vue'
+//import Ninjas from './components/Ninjas'
+
+import FormOne from './components/FormOne.vue'
+import FormTwo from './components/FormTwo'
 
 export default {
   components: {
     'app-header': Header,
     'app-footer': Footer,
-    'app-ninjas': Ninjas,
-    'form-helper': FormHelper
+    //'app-ninjas': Ninjas,
+    //'form-helper': FormHelper,
+    'form-one': FormOne,
+    'form-two': FormTwo
   },
   data() {
     return {
+      component: 'form-two',
       formTitle: 'Login Form',
       title: 'Vue Ninjas',
       ninjas: [
