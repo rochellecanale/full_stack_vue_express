@@ -1,32 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <h1>{{ title }}</h1>
+      <ninjas></ninjas>
   </div>
 </template>
+<script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+import Ninjas from './components/Ninjas'
 
-#nav {
-  padding: 30px;
+export default {
+  components: {
+    'ninjas': Ninjas
+  },
+  data() {
+    return {
+      title: "Ninja App"
+    }
+  },
+  methods: {
+  }
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+</script>
+<style scoped>
+  h1 {
+    color: purple;
+  }
 </style>
