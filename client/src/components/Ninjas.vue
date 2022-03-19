@@ -12,39 +12,39 @@
 
 <script>
 export default {
-    props: {
-        ninjas: {
-            type: Array,
-            required: true
-        }
-    },
-    data() {
-        return {
-        }
-    },
-    methods: {
-        removeNinja() {
-            this.ninjas.pop();
-        }
-    },
-    beforeCreate() {
-        alert('beforeCreate');
-    },
-    created() {
-        alert('created');
-    },
-    beforeMount() {
-        alert('beforeMount');
-    },
-    mounted() {
-        alert('mounted');
-    },
-    beforeUpdate() {
-        alert('beforeUpdate')
-    },
-    updated() {
-        alert('updated')
+  props: {
+    ninjas: {
+      type: Array,
+      required: true
     }
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+    removeNinja () {
+      this.ninjas.pop()
+    }
+  },
+  beforeCreate () {
+    alert('beforeCreate')
+  },
+  created () {
+    alert('created')
+  },
+  beforeMount () {
+    alert('beforeMount')
+  },
+  mounted () {
+    alert('mounted')
+  },
+  beforeUpdate () {
+    alert('beforeUpdate')
+  },
+  updated () {
+    alert('updated')
+  }
 }
 </script>
 <style scoped>

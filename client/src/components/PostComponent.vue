@@ -37,29 +37,29 @@ import {
 
 export default {
   name: 'PostComponent',
-  data() {
+  data () {
     return {
       posts: [],
       error: '',
       text: ''
     }
   },
-  async created() {
+  async created () {
     try {
-      this.posts = await getPosts();
+      this.posts = await getPosts()
     } catch (err) {
-      this.error = err.message;
+      this.error = err.message
     }
   },
   methods: {
-    async createPost() {
-      await insertPost(this.text);
-      this.posts = await getPosts();
-      this.text = "";
+    async createPost () {
+      await insertPost(this.text)
+      this.posts = await getPosts()
+      this.text = ''
     },
-    async deletePost(id) {
-      await deletePost(id);
-      this.posts = await getPosts();
+    async deletePost (id) {
+      await deletePost(id)
+      this.posts = await getPosts()
     }
   }
 }

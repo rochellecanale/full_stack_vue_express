@@ -8,23 +8,23 @@
 import { bus } from '../main'
 
 export default {
-    props: {
-        title: {
-            type: String
-        }
-    },
-    data() {
-        return {
-            pageTitle: this.title
-        }
-    },
-    methods: {
-        changeTitle() {
-            //this.$emit('changeTitle', 'Vue Wizards')
-            this.pageTitle = 'Vue Wizards'
-            bus.$emit('titleChanged', 'Vue Wizards')
-        }
+  props: {
+    title: {
+      type: String
     }
+  },
+  data () {
+    return {
+      pageTitle: this.title
+    }
+  },
+  methods: {
+    changeTitle () {
+      // this.$emit('changeTitle', 'Vue Wizards')
+      this.pageTitle = 'Vue Wizards'
+      bus.$emit('titleChanged', 'Vue Wizards')
+    }
+  }
 }
 </script>
 <style scoped>

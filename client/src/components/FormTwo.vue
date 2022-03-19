@@ -19,14 +19,14 @@
 <script>
 import FormHelper from '../components/FormHelper.vue'
 export default {
-  name: "form-two",
+  name: 'form-two',
   components: {
-      'form-helper': FormHelper
+    'form-helper': FormHelper
   },
-  data() {
+  data () {
     return {
-      formTitle: "Login Form 2",
-    };
-  },
-};
+      formTitle: 'Login Form 2'
+    }
+  }
+}
 </script>

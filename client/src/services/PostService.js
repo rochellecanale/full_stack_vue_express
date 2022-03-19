@@ -1,24 +1,24 @@
 import { processRequestAndResponse } from './CoreService'
-const baseUrl = '/api';
+const baseUrl = '/api'
 
-export async function getPosts() {
-	let url = `${baseUrl}/posts`;
-	let data = await processRequestAndResponse(url, 'get');
-	console.log('data: ', data);
-	return data;
+export async function getPosts () {
+  const url = `${baseUrl}/posts`
+  const data = await processRequestAndResponse(url, 'get')
+  console.log('data: ', data)
+  return data
 }
 
-export async function insertPost(text) {
-	let url = `${baseUrl}/posts`;
-	let payload = {
-		text
-	}
-	let data = await processRequestAndResponse(url, 'post', payload);
-	return data;
+export async function insertPost (text) {
+  const url = `${baseUrl}/posts`
+  const payload = {
+    text
+  }
+  const data = await processRequestAndResponse(url, 'post', payload)
+  return data
 }
 
-export async function deletePost(id) {
-	let url = `${baseUrl}/posts/${ id }`;
-	let data = await processRequestAndResponse(url, 'delete', id);
-	return data;
+export async function deletePost (id) {
+  const url = `${baseUrl}/posts/${id}`
+  const data = await processRequestAndResponse(url, 'delete', id)
+  return data
 }

@@ -8,24 +8,24 @@
 import { bus } from '../main'
 
 export default {
-    props: {
-        title: {
-            type: String
-        }
-    },
-    data() {
-        return {
-            pageTitle: this.title,
-            copyright: "Copyright 2022"
-        }
-    },
-    methods: {
-    },
-    created() {
-        bus.$on('titleChanged', (data) => {
-            this.pageTitle = data
-        })
+  props: {
+    title: {
+      type: String
     }
+  },
+  data () {
+    return {
+      pageTitle: this.title,
+      copyright: 'Copyright 2022'
+    }
+  },
+  methods: {
+  },
+  created () {
+    bus.$on('titleChanged', (data) => {
+      this.pageTitle = data
+    })
+  }
 }
 </script>
 <style scoped>

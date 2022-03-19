@@ -5,12 +5,11 @@
   </div>
 </template>
 
-
 <script>
 export default {
   name: 'About',
   methods: {
-    readRef() {
+    readRef () {
       console.log(this.$refs.about_input.value)
     }
   }
